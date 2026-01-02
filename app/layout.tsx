@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,10 +26,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        {/* 🔥 Mobile Responsive Meta */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+      >
         <Navbar />
         {children}
-        <Footer />   {/* ✅ Footer added here */}
+        <Footer />
       </body>
     </html>
   );

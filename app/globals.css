@@ -12,8 +12,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* MOBILE SMOOTH */
 *{
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
@@ -21,6 +23,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+/* IMAGE & VIDEO RESPONSIVE */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* TYPING */

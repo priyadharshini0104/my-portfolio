@@ -4,33 +4,40 @@ import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#020617] to-[#020617] text-white">
-      <div className="grid md:grid-cols-2 h-screen">
+    <section className="min-h-screen bg-slate-900 text-white pt-28 px-4 md:px-24">
+      <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-        {/* LEFT IMAGE */}
-        <div className="flex items-center justify-center">
+        {/* IMAGE */}
+        <div className="flex justify-center">
           <div className="relative group">
-            <div className="absolute inset-0 rounded-3xl bg-blue-500 blur-3xl opacity-40 group-hover:opacity-70 transition"></div>
+            <div className="absolute inset-0 rounded-3xl bg-blue-500 blur-3xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
 
             <img
               src="/Priya.jpeg"
               alt="Priyadharshini"
-              className="relative w-[380px] h-[470px] object-cover rounded-3xl border-4 border-blue-500 shadow-2xl transition duration-500 group-hover:scale-105"
+              className="relative w-full max-w-md mx-auto h-[420px] object-cover rounded-3xl border-4 border-blue-500 shadow-2xl transition duration-500 group-hover:scale-105"
             />
           </div>
         </div>
 
-        {/* RIGHT CONTENT */}
-        <div className="flex flex-col justify-center px-0">
+        {/* CONTENT */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+
+          {/* Greeting */}
           <h3 className="text-blue-400 text-lg mb-2">Hi, I am</h3>
 
-          <h1 className="text-5xl font-bold mb-4">Priyadharshini</h1>
+          {/* Name */}
+          <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4">
+            Priyadharshini
+          </h1>
 
-          <h2 className="text-3xl mb-5 fullstack-animate">
+          {/* Title */}
+          <h2 className="text-2xl md:text-3xl mb-6 gradient-glow font-bold">
             Full Stack Web Developer
           </h2>
 
-          <p className="text-gray-400 leading-relaxed mb-6 max-w-xl">
+          {/* Description */}
+          <p className="text-gray-400 leading-relaxed mb-8 max-w-xl">
             Passionate IT student building smart Web, AI & IoT applications.
             <br />
             Love to design responsive, user-friendly and secure websites.
@@ -38,66 +45,43 @@ export default function Page() {
             Dreaming to become a high-package software engineer.
           </p>
 
-          {/* Social Icons */}
-          <div className="flex gap-5 mt-4">
-            <a href="https://www.linkedin.com/in/priyadharshini-dhanasekaran-778017283" target="_blank" className="p-4 bg-blue-600 rounded-full hover:scale-110 transition">
+          {/* SOCIAL ICONS */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-8">
+            <a
+              href="https://www.linkedin.com/in/priyadharshini-dhanasekaran-778017283"
+              target="_blank"
+              className="p-4 bg-blue-600 rounded-full hover:scale-110 transition duration-300"
+            >
               <FaLinkedin size={22} />
             </a>
-            <a href="https://github.com/priyadharshini0104" target="_blank" className="p-4 bg-gray-700 rounded-full hover:scale-110 transition">
+
+            <a
+              href="https://github.com/priyadharshini0104"
+              target="_blank"
+              className="p-4 bg-gray-700 rounded-full hover:scale-110 transition duration-300"
+            >
               <FaGithub size={22} />
             </a>
-            <a href="PRIYADHARSHINI.D-CV.pdf" download className="p-4 bg-green-600 rounded-full hover:scale-110 transition">
+
+            <a
+              href="PRIYADHARSHINI.D-CV.pdf"
+              download
+              className="p-4 bg-green-600 rounded-full hover:scale-110 transition duration-300"
+            >
               <FaDownload size={22} />
             </a>
           </div>
 
-          {/* Hire Me Bottom */}
-          <div className="mt-10">
-            <button
-              onClick={() => window.location.href = "/contact"}
-              className="hire-btn"
-            >
-              Hire Me 
-            </button>
-          </div>
+          {/* HIRE ME BUTTON */}
+          <button
+            onClick={() => (window.location.href = "/contact")}
+            className="px-12 py-3 rounded-full bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-400 shadow-[0_0_35px_rgba(99,102,241,.7)] hover:scale-110 transition transform duration-300 font-semibold text-lg"
+          >
+            Hire Me
+          </button>
+
         </div>
       </div>
-
-      <style jsx>{`
-        .fullstack-animate {
-          font-weight: 700;
-          background: linear-gradient(90deg,#38bdf8,#6366f1,#a78bfa,#38bdf8);
-          background-size: 300%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: gradientRun 4s linear infinite, glow 2s ease-in-out infinite;
-        }
-
-        @keyframes gradientRun {
-          0% { background-position: 0%; }
-          100% { background-position: 300%; }
-        }
-
-        @keyframes glow {
-          0%,100% { text-shadow:0 0 12px #38bdf8; }
-          50% { text-shadow:0 0 30px #a78bfa; }
-        }
-
-        .hire-btn {
-          padding: 14px 48px;
-          border-radius: 999px;
-          background: linear-gradient(90deg,#38bdf8,#6366f1,#a78bfa);
-          box-shadow: 0 0 35px rgba(99,102,241,.7);
-          font-size: 18px;
-          font-weight: 600;
-          transition: .4s;
-        }
-
-        .hire-btn:hover {
-          transform: scale(1.12);
-          box-shadow: 0 0 55px rgba(167,139,250,.9);
-        }
-      `}</style>
-    </main>
+    </section>
   );
 }
